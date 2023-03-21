@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# csv files 
+*.csv
+
+# poetry
+*.toml
+*.lock
+
+# notebooks
+*.ipynb
