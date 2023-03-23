@@ -10,6 +10,7 @@ model.load_model("xgb_model.json")
 
 # Caching the model for faster loading
 @st.cache_data
+# Define the function predict, which is called in the Streamlit interface
 def predict(
     job_title,
     most_used_tool,
@@ -20,6 +21,7 @@ def predict(
     edu_level,
     years_experience,
 ):
+    # Encode Streamlit interface inputs to match model features
     if job_title == "Machine Learning Engineer/Specialist":
         job_title = 2
     elif job_title == "Data Analyst":
@@ -120,6 +122,7 @@ def predict(
     elif edu_level == "PhD":
         edu_level = 2
 
+    # Call model.predict on the Streamlit inputs
     prediction = model.predict(
         pd.DataFrame(
             data={
@@ -139,9 +142,11 @@ def predict(
             index=[0],
         )
     )
+    # Return the final model prediction
     return prediction
 
 
+# Set Streamlit title, image and header for the Streamlit app interface
 st.title("Danish Data Science Salary Predictor")
 st.image(
     """https://builtin.com/cdn-cgi/image/f=auto,quality=80,width=752,height=435/https://builtin.com/sites/www.builtin.com/files/styles/byline_image/public/2021-12/machine-learning-examples-applications.png"""
@@ -234,6 +239,9 @@ years_experience = st.number_input(
     value=1.0,
 )
 
+# If the button 'Predict Salary' is pressed on the Streamlit app interface,
+# the features are sent to the model, a prediction is made and if succesfull,
+# the price is returned and displayed
 if st.button("Predict Salary"):
     price = predict(
         job_title,
