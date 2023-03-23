@@ -29,5 +29,5 @@ The app allows you to input various features that may affect data science salari
 
 The machine learning model used in this app is a GradientBoostRegressor, which was trained on a dataset of data science salaries and various features.
 
-Dataset
+## Dataset
 The dataset used to train the machine learning model was obtained from the [Danish Data Science Association](https://ddsa.dk/). The dataset contains information about data science salaries and various features, such as job title, industry, and years of experience. The dataset was cleaned and preprocessed before being used to train the model.
