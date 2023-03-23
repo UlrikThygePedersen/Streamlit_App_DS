@@ -14,7 +14,6 @@ def predict(
     job_title,
     most_used_tool,
     people_employed,
-    # people_managed,
     sector,
     region,
     edu_background,
@@ -71,19 +70,6 @@ def predict(
     elif people_employed == "250+":
         people_employed = 5
 
-    # if people_managed == "0":
-    #     people_managed = 0
-    # elif people_managed == "1-9":
-    #     people_managed = 1
-    # elif people_managed == "10-24":
-    #     people_managed = 2
-    # elif people_managed == "25-99":
-    #     people_managed = 3
-    # elif people_managed == "100-249":
-    #     people_managed = 4
-    # elif people_managed == "250+":
-    #     people_managed = 5
-
     if sector == "Consulting":
         sector = 0
     elif sector == "Education/Research":
@@ -139,7 +125,6 @@ def predict(
             data={
                 "job_title": job_title,
                 "people_employed": people_employed,
-                # "people_managed": people_managed,
                 "sector": sector,
                 "region": region,
                 "edu_background": edu_background,
@@ -194,18 +179,6 @@ people_employed = st.selectbox(
         "250+",
     ],
 )
-
-# people_managed = st.selectbox(
-#     "How many people are you managing at your work?",
-#     [
-#         "0",
-#         "1-9",
-#         "10-24",
-#         "25-99",
-#         "100-249",
-#         "250+",
-#     ],
-# )
 
 sector = st.selectbox(
     "In which sector do you work?",
@@ -266,7 +239,6 @@ if st.button("Predict Salary"):
         job_title,
         most_used_tool,
         people_employed,
-        # people_managed,
         sector,
         region,
         edu_background,
