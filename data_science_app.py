@@ -13,7 +13,7 @@ def predict(
     job_title,
     most_used_tool,
     people_employed,
-    people_managed,
+    # people_managed,
     sector,
     region,
     edu_background,
@@ -99,18 +99,18 @@ def predict(
     #     "250+": 5,
     # }
 
-    if people_managed == "0":
-        people_managed = 0
-    elif people_managed == "1-9":
-        people_managed = 1
-    elif people_managed == "10-24":
-        people_managed = 2
-    elif people_managed == "25-99":
-        people_managed = 3
-    elif people_managed == "100-249":
-        people_managed = 4
-    elif people_managed == "250+":
-        people_managed = 5
+    # if people_managed == "0":
+    #     people_managed = 0
+    # elif people_managed == "1-9":
+    #     people_managed = 1
+    # elif people_managed == "10-24":
+    #     people_managed = 2
+    # elif people_managed == "25-99":
+    #     people_managed = 3
+    # elif people_managed == "100-249":
+    #     people_managed = 4
+    # elif people_managed == "250+":
+    #     people_managed = 5
 
     # sector_dict = {
     #     "Consulting": 0,
@@ -217,17 +217,17 @@ def predict(
             data={
                 "job_title": job_title,
                 "people_employed": people_employed,
-                "people_managed": people_managed,
+                # "people_managed": people_managed,
                 "sector": sector,
                 "region": region,
                 "edu_background": edu_background,
                 "edu_level": edu_level,
                 "years_experience": years_experience,
+                "tool_Adv": tool_Adv,
+                "tool_Hig": tool_Hig,
+                "tool_Que": tool_Que,
                 "tool_Mid": tool_Mid,
                 "tool_Aut": tool_Aut,
-                "tool_Que": tool_Que,
-                "tool_Hig": tool_Hig,
-                "tool_Adv": tool_Adv,
             },
             index=[0],
         )
@@ -273,17 +273,17 @@ people_employed = st.selectbox(
     ],
 )
 
-people_managed = st.selectbox(
-    "How many people are you managing at your work?",
-    [
-        "0",
-        "1-9",
-        "10-24",
-        "25-99",
-        "100-249",
-        "250+",
-    ],
-)
+# people_managed = st.selectbox(
+#     "How many people are you managing at your work?",
+#     [
+#         "0",
+#         "1-9",
+#         "10-24",
+#         "25-99",
+#         "100-249",
+#         "250+",
+#     ],
+# )
 
 sector = st.selectbox(
     "In which sector do you work?",
@@ -344,7 +344,7 @@ if st.button("Predict Salary"):
         job_title,
         most_used_tool,
         people_employed,
-        people_managed,
+        # people_managed,
         sector,
         region,
         edu_background,
