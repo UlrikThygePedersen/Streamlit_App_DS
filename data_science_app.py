@@ -20,23 +20,12 @@ def predict(
     edu_level,
     years_experience,
 ):
-    # def replace_word(X, X_dict):
-    #     for word, replacement in X_dict.items():
-    #         if X == word:
-    #             X = replacement
-
     if job_title == "Machine Learning Engineer/Specialist":
         job_title = 2
     elif job_title == "Data Analyst":
         job_title = 0
     elif job_title == "Data Scientist":
         job_title = 1
-
-    # job_title_dict = {
-    #     "Machine Learning Engineer/Specialist": 2,
-    #     "Data Analyst": 0,
-    #     "Data Scientist": 1,
-    # }
 
     if (
         "High-level programming languages (e.g., Python, R, MATLAB, SAS, Julia, JavaScript)"
@@ -68,15 +57,6 @@ def predict(
     else:
         tool_Aut = 0
 
-    # people_employed_dict = {
-    #     "0 (self-employed)": 0,
-    #     "1-9": 1,
-    #     "10-24": 2,
-    #     "25-99": 3,
-    #     "100-249": 4,
-    #     "250+": 5,
-    # }
-
     if people_employed == "0 (self-employed)":
         people_employed = 0
     elif people_employed == "1-9":
@@ -90,15 +70,6 @@ def predict(
     elif people_employed == "250+":
         people_employed = 5
 
-    # people_managed_dict = {
-    #     "0": 0,
-    #     "1-9": 1,
-    #     "10-24": 2,
-    #     "25-99": 3,
-    #     "100-249": 4,
-    #     "250+": 5,
-    # }
-
     # if people_managed == "0":
     #     people_managed = 0
     # elif people_managed == "1-9":
@@ -111,16 +82,6 @@ def predict(
     #     people_managed = 4
     # elif people_managed == "250+":
     #     people_managed = 5
-
-    # sector_dict = {
-    #     "Consulting": 0,
-    #     "Education/Research": 1,
-    #     "Financial Services": 2,
-    #     "Law": 3,
-    #     "Life Sciences": 4,
-    #     "Public Sector": 5,
-    #     "Tech": 6,
-    # }
 
     if sector == "Consulting":
         sector = 0
@@ -137,14 +98,6 @@ def predict(
     elif sector == "Tech":
         sector = 6
 
-    # region_dict = {
-    #     "Hovedstaden": 0,
-    #     "Sjælland": 3,
-    #     "Syddanmark": 4,
-    #     "Midtjylland": 1,
-    #     "Nordjylland": 2,
-    # }
-
     if region == "Hovedstaden":
         region = 0
     elif region == "Sjælland":
@@ -155,15 +108,6 @@ def predict(
         region = 1
     elif region == "Nordjylland":
         region = 2
-
-    # edu_background_dict = {
-    #     "Business/Economics": 0,
-    #     "Computer Science": 1,
-    #     "Data Science": 2,
-    #     "Mathematics/Statistics": 3,
-    #     "Natural Sciences": 4,
-    #     "Sefl-taught": 5,
-    # }
 
     if edu_background == "Business/Economics":
         edu_background = 0
@@ -178,14 +122,6 @@ def predict(
     elif edu_background == "Sefl-taught":
         edu_background = 5
 
-    # edu_level_dict = {
-    #     "Secondary School": 3,
-    #     "Academy Profession Degree": 0,
-    #     "Undergraduate": 4,
-    #     "Masters": 1,
-    #     "PhD": 2,
-    # }
-
     if edu_level == "Secondary School":
         edu_level = 3
     elif edu_level == "Academy Profession Degree":
@@ -196,21 +132,6 @@ def predict(
         edu_level = 1
     elif edu_level == "PhD":
         edu_level = 2
-
-    # input_dict = {
-    #     job_title: job_title_dict,
-    #     people_employed: people_employed_dict,
-    #     people_managed: people_managed_dict,
-    #     sector: sector_dict,
-    #     Xregion: region_dict,
-    #     edu_background: edu_background_dict,
-    #     edu_level: edu_level_dict,
-    # }
-
-    # for key, value in input_dict.items():
-    #     for word, replacement in value.items():
-    #         if key == word:
-    #             key = replacement
 
     prediction = model.predict(
         pd.DataFrame(
