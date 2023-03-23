@@ -335,7 +335,7 @@ edu_level = st.selectbox(
 years_experience = st.number_input(
     "How many years of relevant full-time work experience do you have?",
     min_value=0.1,
-    max_value=100.0,
+    max_value=12.0,
     value=1.0,
 )
 
