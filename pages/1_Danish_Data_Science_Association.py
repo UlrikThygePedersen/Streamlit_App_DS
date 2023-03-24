@@ -146,6 +146,10 @@ def predict(
     return prediction
 
 
+# Set page configuration to navigate to it
+st.set_page_config(page_title="Danish Data Science Association", page_icon="👨‍🔬")
+st.sidebar.header("Danish Data Science Association")
+
 # Set Streamlit title, image and header for the Streamlit app interface
 st.title("Danish Data Science Salary Predictor")
 st.image(
