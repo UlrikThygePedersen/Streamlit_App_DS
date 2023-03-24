@@ -137,3 +137,6 @@ dmypy.json
 
 # notebooks
 *.ipynb
+
+# pdf
+*.pdf
